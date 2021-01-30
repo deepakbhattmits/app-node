@@ -1,5 +1,5 @@
 # dependencies
 /node_modules
 server.cert
-serve.key
+server.key
 nodemon.json
