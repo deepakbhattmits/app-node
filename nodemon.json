@@ -1,0 +1,8 @@
+{
+	"env": {
+		"MONGO_USER": "deepak",
+		"MONGO_PASSWORD": "deepak123",
+		"MONGO_DEFAULT_DATABASE": "node-complete",
+		"STRIPE_KEY": "sk_test_51HsAOEIC7ZYJ1zazDvQvfMWQOJaXu7CJ8JC8wypKXHUdpuVVtELBsQlXq8WG9PlJrFKf5SvgwtiMekagNPomwHMm00W16wZ24p"
+	}
+}
