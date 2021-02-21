@@ -19,6 +19,7 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
+	console.log('ADDED HERE', req);
 	const title = req.body.title;
 	const image = req.file;
 	const price = req.body.price;
@@ -159,7 +160,7 @@ exports.postEditProduct = (req, res, next) => {
 				product.imageUrl = image.path;
 			}
 			return product.save().then((result) => {
-				console.log('UPDATED PRODUCT!');
+				// console.log('UPDATED PRODUCT!');
 				res.redirect('/admin/products');
 			});
 		})
