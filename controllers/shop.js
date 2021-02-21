@@ -8,6 +8,7 @@ const Order = require('../models/order');
 const ITEMS_PER_PAGE = 2;
 // getProducts
 exports.getProducts = (req, res, next) => {
+	console.log('Load TIME : ', req.session.isLoggedIn);
 	const page = +req.query.page || 1;
 	let totalItems;
 	Product.find()
