@@ -24,7 +24,7 @@ router.post(
 		body('price').isFloat(),
 		body('description').isLength({ min: 5, max: 400 }).trim(),
 	],
-	isAuth,
+	// isAuth,
 	adminController.postAddProduct
 );
 
