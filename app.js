@@ -34,9 +34,11 @@ const fileStorage = multer.diskStorage({
 		cb(null, 'images');
 	},
 	filename: (req, file, cb) => {
+		const now = new global.Date();
 		cb(
 			null,
-			`${new Date.toISOString().replace(/:/g, '-')}-${file.originalname}`
+			// `${new Date.toISOString().replace(/:/g, '-')}-${file.originalname}`
+			`${now.getTime()}-${file.originalname}`
 		);
 	},
 });
@@ -125,6 +127,7 @@ app.use(errorController.get404);
 app.use((error, req, res, next) => {
 	// res.status(error.httpStatusCode).render(...);
 	// res.redirect('/500');
+	console.log('ADD TIME : ', req.session);
 	res.status(500).render('500', {
 		pageTitle: 'Error!',
 		path: '/500',
@@ -138,7 +141,7 @@ mongoose
 		useUnifiedTopology: true,
 	})
 	.then((result) => {
-		app.listen(process.env.port || 3000);
+		app.listen(process.env.PORT || 3000);
 		// https
 		// 	.createServer({ key: privateKey, cert: certificate }, app)
 		// 	.listen(process.env.port || 3000);
